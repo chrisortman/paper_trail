@@ -9,4 +9,7 @@ require "active_record"
 require "paper_trail/has_paper_trail"
 require "paper_trail/reifier"
 require "paper_trail/frameworks/active_record/models/paper_trail/version"
+
+::YAML.dump_tags[ActiveRecord::Type::Time::Value] = ::YAML.dump_tags[ActiveSupport::TimeWithZone]
+
 ActiveRecord::Base.include PaperTrail::Model
